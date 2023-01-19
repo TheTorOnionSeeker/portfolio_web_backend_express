@@ -27,24 +27,28 @@ apiRouter.post('/person/create',(req,res)=>{
 apiRouter.post('/person/update',(req,res)=>{
     let {id}=req.body;
     let personData=req.body;
-    updatePerson(id,personData)
-    .then((pers)=>{
-        res.status(200).json({personUpdated:pers});
-    })
-    .catch((error)=>{
-        res.status(400).json({error:error.message});
-})
+    if(id!=="63c98dc07e77e43ca8404262"){
+        updatePerson(id,personData)
+        .then((pers)=>{
+            res.status(200).json({personUpdated:pers});
+        })
+        .catch((error)=>{
+            res.status(400).json({error:error.message});
+        })
+    }
 })
 
 apiRouter.post('/person/delete',(req,res)=>{
     let {id}=req.body;
-    deletePerson(id)
-    .then((pers)=>{
-        res.status(200).json('Success. Person deleted');
-    })
-    .catch((error)=>{
-        res.status(400).json({error:error.message});
-})
+    if(id!=="63c98dc07e77e43ca8404262"){
+        deletePerson(id)
+        .then((pers)=>{
+            res.status(200).json('Success. Person deleted');
+        })
+        .catch((error)=>{
+            res.status(400).json({error:error.message});
+        })
+    }
 })
 
 
