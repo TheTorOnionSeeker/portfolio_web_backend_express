@@ -4,9 +4,6 @@ require('dotenv').config();
 const config=require('./config')
 
 const PORT=process.env.PORT || 3001;
-/* const mongoUrl ='mongodb+srv://admin:lI44SsHEiyLVyeNq@portfoliowebcluster.ywzfwhm.mongodb.net/?retryWrites=true&w=majority'; */
-/* console.log(mongoUrl); */
-/* const CONNECTION_URL='mongodb+srv://mongoDBAdmin:kb2Q1tC3qt3R4vZZ@cluster0.sqkbgn9.mongodb.net/?retryWrites=true&w=majority'; */
 
 mongoose.connect(config.db.uri,{useNewUrlParser:true, useUnifiedTopology:true})
     .then(()=>server.listen(PORT,()=>console.log(`Server running on port ${PORT}`)))
