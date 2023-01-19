@@ -1,10 +1,4 @@
 const Person=require('../models/models');
-/* require('dotenv').config();
-const MongoClient = require('mongodb').MongoClient;
-
-const uri = process.env.MONGO_URL;
-const client = new MongoClient(uri, { useNewUrlParser: true });
-const collection = client.db("test").collection("devices"); */
 
 const getPerson=async ()=>{
     try {
@@ -46,16 +40,5 @@ const deletePerson=(id)=>{
         return error;
     }
 }
-
-/* const createPerson=(req,res)=>{
-    const person=req.body;
-    newPerson=new postPerson(person);
-    try {
-        newPerson.save();
-        res.status(201).json(newPerson)
-    } catch (error) {
-        res.status(409).json({message:error.message})
-    }
-}; */
 
 module.exports={getPerson,createPerson,updatePerson,deletePerson};
