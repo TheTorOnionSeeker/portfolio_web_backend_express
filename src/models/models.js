@@ -6,7 +6,10 @@ const personSchema=new Schema({
     image:String,
     role:String,
     education:[String],
-    skills:[String],
+    hard_skills:[String],
+    percentage_hard_skills:[Number],
+    soft_skills:[String],
+    languages:[String],
     projects:[String]
 });
 
