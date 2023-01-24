@@ -27,14 +27,7 @@ apiRouter.post('/person/create',(req,res)=>{
 apiRouter.post('/person/update',(req,res)=>{
     let {id}=req.body;
     let personData=req.body;
-    updatePerson(id,personData)
-        .then((pers)=>{
-            res.status(201).json({personUpdated:pers});
-        })
-        .catch((error)=>{
-            res.status(400).json({error:error.message});
-        })
-    /* if(id!=="63c98dc07e77e43ca8404262"){
+    if(id!=="63c98dc07e77e43ca8404262"){
         updatePerson(id,personData)
         .then((pers)=>{
             res.status(201).json({personUpdated:pers});
@@ -44,7 +37,7 @@ apiRouter.post('/person/update',(req,res)=>{
         })
     } else {
         res.status(403).json({error:'Not allowed'})
-    } */
+    }
 })
 
 apiRouter.post('/person/delete',(req,res)=>{
